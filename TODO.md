@@ -1,0 +1,3 @@
+- [x] Update header blade to add mobile-centered Felicità text logo and keep desktop image logo.
+- [x] Update style.css to hide mobile top-left image logo and show centered responsive text logo on mobile.
+- [x] Verify structure consistency and summarize testing status.
