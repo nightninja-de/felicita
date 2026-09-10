@@ -1,12 +1,28 @@
 
 <?php
 
-// Voucher reservation form
-Route::get('/voucher', [App\Http\Controllers\HomeController::class, 'voucherForm'])->name('voucher.form');
-Route::post('/voucher/checkout', [App\Http\Controllers\HomeController::class, 'voucherCheckout'])->name('voucher.checkout');
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\StaffAuthController;
+
+// Gutschein purchase
+Route::get('/voucher', [VoucherController::class, 'form'])->name('voucher.form');
+Route::post('/voucher/checkout', [VoucherController::class, 'checkout'])->name('voucher.checkout');
+Route::get('/voucher/success', [VoucherController::class, 'success'])->name('voucher.success');
+Route::post('/stripe/webhook', [VoucherController::class, 'stripeWebhook'])->name('stripe.webhook');
+
+// Staff auth
+Route::get('/staff/login', [StaffAuthController::class, 'showLogin'])->name('staff.login');
+Route::post('/staff/login', [StaffAuthController::class, 'login']);
+Route::post('/staff/logout', [StaffAuthController::class, 'logout'])->name('staff.logout');
+
+// Staff Gutschein redemption
+Route::middleware('auth')->prefix('staff')->group(function () {
+    Route::get('/scan', [VoucherController::class, 'scanPage'])->name('staff.scan');
+    Route::post('/vouchers/check', [VoucherController::class, 'checkCode'])->name('staff.voucher.check');
+    Route::post('/vouchers/redeem', [VoucherController::class, 'redeemCode'])->name('staff.voucher.redeem');
+});
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('index');

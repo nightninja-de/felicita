@@ -7,19 +7,6 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    // Show Gutschein reservation form
-    public function voucherForm()
-    {
-        return view('home.voucher_form');
-    }
-
-    // Handle voucher checkout (Stripe integration will go here)
-    public function voucherCheckout(Request $request)
-    {
-        // Validate and process payment (Stripe logic placeholder)
-        // ...
-        return back()->with('success', 'Weiterleitung zur Zahlung...');
-    }
     public function events()
     {
         return view('home/events');

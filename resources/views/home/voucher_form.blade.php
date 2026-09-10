@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layout.layout')
 
 @section('content')
 <div class="container" style="max-width: 500px; margin: 40px auto;">
