@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\GutscheinPurchaseNotification;
 use App\Mail\SendGutscheinMail;
 use App\Models\GutscheinOrder;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -106,7 +107,8 @@ class VoucherController extends Controller
                     'currency' => $order->currency,
                 ], now()->addYear());
 
-                Mail::to($order->email)->queue(new SendGutscheinMail($order, $voucher));
+                Mail::to($order->email)->send(new SendGutscheinMail($order, $voucher));
+                Mail::to('support@felicita-restaurant.com')->send(new GutscheinPurchaseNotification($order, $voucher));
             }
         }
 

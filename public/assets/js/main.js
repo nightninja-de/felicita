@@ -214,7 +214,11 @@
       var swiper = new Swiper(".ak-slider-2", {
         loop: true,
         speed: 1000,
-        autoplay: false,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
         slidesPerView: "auto",
         spaceBetween: 30,
         pagination: {

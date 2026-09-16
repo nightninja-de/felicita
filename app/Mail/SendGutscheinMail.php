@@ -8,14 +8,13 @@ use BeyondCode\Vouchers\Models\Voucher;
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class SendGutscheinMail extends Mailable implements ShouldQueue
+class SendGutscheinMail extends Mailable
 {
     use Queueable, SerializesModels;
 

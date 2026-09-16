@@ -21,17 +21,15 @@
                     <div class="footer-main">
                         <div class="footer-eamil-menu">
                             <div class="footer-email">
-                                <a href="mailto:info@example.com">
-                                    info@example.com
+                                <a href="mailto:support@felicita-restaurant.com">
+                                    support@felicita-restaurant.com
                                 </a>
                             </div>
                             <div class="footer-menu">
                                 <ul>
-                                    <li><a href="{{ route('index') }}">Startseite</a></li>
                                     <li><a href="{{ route('about') }}">Über uns</a></li>
                                     <li><a href="{{ route('menu') }}">Speisekarte</a></li>
-                                    <li><a href="{{ route('blog') }}">Blog</a></li>
-                                    <li><a href="{{ route('chef') }}">Küchenchef</a></li>
+                                    <li><a href="{{ route('reservations') }}">Reservierung</a></li>
                                     <li><a href="{{ route('contact') }}">Kontakt</a></li>
                                 </ul>
                             </div>
@@ -39,24 +37,27 @@
                         <div class="ak-height-75 ak-height-lg-5"></div>
                         <div class="footer-info">
                             <div class="fooer-phn">
-                                <a href="tel:1-800-915-6271">1-800-915-6271</a>
-                                <br>
-                                <a href="tel:1-800-915-6271">1-800-915-6271</a>
+                                <a href="tel:+4934124806093">0341 24806093</a>
                             </div>
                             <div class="footer-address">
-                                <a href="https://maps.app.goo.gl/gAd1JdfRW5d6eHkn7" target="_blank">
-                                    2726 Av. PapineauMontreal,<br>QC H2K 4J6, Canada
+                                <a href="https://www.google.com/maps/search/?api=1&query=Anton-Zickmantel-Str.+44%2C+04249+Leipzig" target="_blank">
+                                    Anton-Zickmantel-Str. 44,<br>04249 Leipzig
                                 </a>
                             </div>
                             <div class="footer-time">
-                                <p>SONNTAG - DONNERSTAG: 11:30 - 23:00 UHR</p>
+                                <p>MONTAG - SONNTAG</p>
                                 <div class="footer-time-border my-1"></div>
-                                <p>FREITAG & SAMSTAG: 11:30 - 00:00 UHR</p>
+                                <p>11:00 - 22:00 UHR</p>
                             </div>
                             <div class="footer-btn">
                                 <a href="{{ route('reservations') }}">
                                     <div class="ak-btn style-5">
                                         Reservierungen
+                                    </div>
+                                </a>
+                                <a href="{{ route('staff.login') }}">
+                                    <div class="ak-btn style-5">
+                                        Mitarbeiter-Login
                                     </div>
                                 </a>
                             </div>
@@ -68,7 +69,10 @@
 
                     <div class="copy-right-section">
                         <p class="text-uppercase text-md-center text-white">
-                            Copyright 2023 Alle Rechte vorbehalten
+                            &copy; {{ date('Y') }} Felicità &ndash; Alle Rechte vorbehalten
+                        </p>
+                        <p class="text-uppercase text-md-center text-white" style="margin-top:10px; font-size:13px;">
+                            Erstellt &amp; betreut von <a href="https://webshotdigital.com/" target="_blank" rel="noopener" style="color:#FFD28D;">Webshot Digital</a>
                         </p>
                     </div>
 

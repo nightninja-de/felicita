@@ -1508,6 +1508,16 @@ select:focus {
   position: absolute;
   margin-top: 8%;
 }
+.ak-commmon-hero.ak-style1.ak-commmon-hero-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(4, 13, 16, 0.72) 0%, rgba(9, 30, 36, 0.55) 45%, rgba(9, 30, 36, 0.4) 100%);
+}
+.ak-commmon-hero.ak-style1.ak-commmon-hero-gradient .ak-commmon-heading {
+  z-index: 2;
+}
 
 .ak-shine-hover-1 {
   position: relative;
@@ -1609,6 +1619,13 @@ select:focus {
   z-index: -10;
   height: 100%;
   width: 100%;
+}
+.set-bg-img-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -9;
+  background: linear-gradient(90deg, rgba(4, 13, 16, 0.8) 0%, rgba(9, 30, 36, 0.65) 45%, rgba(9, 30, 36, 0.5) 100%);
 }
 
 .drop-anim-gallery {
@@ -3281,7 +3298,7 @@ input[type=checkbox] {
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
-  margin-top: 15px;
+  margin-top: -8px;
 }
 .ak-site_header.ak-style1 .ak-main_header_left {
   display: none;
@@ -3293,21 +3310,33 @@ input[type=checkbox] {
 }
 .ak-site_header.ak-style1 .header-top {
   position: relative;
-  padding: 0px 10px 0px 28px;
-  height: 100px;
+  padding: 0px 19px;
+  height: 170px;
+  overflow: hidden;
 }
 .ak-site_header.ak-style1 .header-top .wrapper {
-  height: 100px;
+  height: 170px;
   width: 100%;
   justify-content: space-between;
   display: flex;
   align-items: center;
 }
 .ak-site_header.ak-style1 .header-top .wrapper .header-logo {
-  border-right: 0.3px solid #635542;
+  position: relative;
   display: flex;
-  height: 0%;
+  height: 100%;
   align-items: center;
+}
+.ak-site_header.ak-style1 .header-top .wrapper .header-logo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 85%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 210, 141, 0.25) 35%, #FFD28D 50%, rgba(255, 210, 141, 0.25) 65%, transparent 100%);
+  background-size: 100% 300%;
+  animation: ak-gold-shine-v 4.5s linear infinite;
 }
 .ak-site_header.ak-style1 .header-top .wrapper .header-logo .logo {
   color: #fff;
@@ -3876,37 +3905,51 @@ input[type=checkbox] {
     height: 20px;
   }
 }
-  .nav-bar-border {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100px; /* Adjust as needed to match the nav bar position */
-    height: 0;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .nav-bar-border::before,
-  .nav-bar-border::after {
+  /* Gold shine lines either side of "Felicità", anchored to the text's
+     own edges (not a guessed viewport width) so they always stay centered
+     on it and keep an exact small gap, at any font size or screen width. */
+  .felicita-logo-link::before,
+  .felicita-logo-link::after {
     content: "";
     position: absolute;
-    top: 0;
-    height: 0.5px;
-    background: #FFD28D;
-    opacity: 0.3;
-    width: calc(50vw - 180px); /* Adjust 180px to half the logo width */
+    bottom: 18%;
+    height: 1.5px;
+    width: 2000px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 210, 141, 0.35) 40%, #FFD28D 50%, rgba(255, 210, 141, 0.35) 60%, transparent 100%);
+    background-size: 300% 100%;
+    animation: ak-gold-shine-h 4.5s linear infinite;
+    pointer-events: none;
   }
-  .nav-bar-border::before {
-    left: 0;
+  .felicita-logo-link::before {
+    right: calc(100% + 16px);
   }
-  .nav-bar-border::after {
-    right: 0;
+  .felicita-logo-link::after {
+    left: calc(100% + 16px);
+    animation-delay: 2.25s;
   }
-  
-  /* Responsive adjustment for mobile */
-  @media (max-width: 600px) {
-    .nav-bar-border::before,
-    .nav-bar-border::after {
-      width: calc(50vw - 80px); /* Adjust for smaller logo on mobile */
+
+  @keyframes ak-gold-shine-h {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes ak-gold-shine-v {
+    0% {
+      background-position: 0 -100%;
+    }
+    100% {
+      background-position: 0 200%;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .felicita-logo-link::before,
+    .felicita-logo-link::after,
+    .ak-site_header.ak-style1 .header-top .wrapper .header-logo::after,
+    .header-reserve-link::before {
+      animation: none;
     }
   }
 
@@ -3983,9 +4026,10 @@ input[type=checkbox] {
 }
 .footer-main .footer-eamil-menu {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 30px;
 }
 .footer-main .footer-eamil-menu .footer-email a {
   font-size: 35px;
@@ -4078,6 +4122,21 @@ input[type=checkbox] {
     flex-wrap: wrap;
     gap: 30px;
   }
+  .footer-main .footer-info .footer-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  .footer-main .footer-info .footer-btn a {
+    display: block;
+    width: 100%;
+  }
+  .footer-main .footer-info .footer-btn a .ak-btn.style-5 {
+    width: 100%;
+    text-align: center;
+    padding: 16px 20px;
+  }
   .ak-footer.ak-style-1 {
     position: relative;
   }
@@ -4133,9 +4192,16 @@ input[type=checkbox] {
   width: 100%;
   position: absolute;
   background-position: center;
+  background-size: cover;
   left: 0;
   top: 0;
   z-index: 9;
+}
+.ak-hero.ak-style1 .ak-hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(4, 13, 16, 0.72) 0%, rgba(9, 30, 36, 0.55) 45%, rgba(9, 30, 36, 0.4) 100%);
 }
 .ak-hero.ak-style1 .hero-text-section {
   z-index: 10;
@@ -4144,6 +4210,7 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
   height: 100%;
+  transform: translateY(150px);
 }
 .ak-hero.ak-style1 .hero-text-section .swiper-slide-active .slider-info .hero-title .mini-title {
   font-style: italic;
@@ -4184,19 +4251,17 @@ input[type=checkbox] {
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title {
   color: #fff;
   position: relative;
-  top: 40px;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  animation: ak-hero-rise-40 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6) 0.6s both;
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1 {
   font-style: italic;
-  border-bottom: 1px solid #4F4836;
+  border-bottom: 1px solid #FFD28D;
   display: inline-flex;
   position: relative;
   left: 10%;
-  top: 40px;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  animation: ak-hero-rise-40 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6) 0.75s both;
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1.style-2 {
   left: 0%;
@@ -4205,9 +4270,9 @@ input[type=checkbox] {
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text {
   position: relative;
-  top: 30px;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+  color: #EDEDED;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  animation: ak-hero-rise-30 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6) 1s both;
   margin-right: 200px;
   margin-top: 20px;
   font-size: 18px;
@@ -4216,9 +4281,154 @@ input[type=checkbox] {
 }
 .ak-hero.ak-style1 .hero-text-section .slider-info .hero-btn.style-1 {
   position: relative;
-  top: 20px;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6);
+  animation: ak-hero-rise-20 0.6s cubic-bezier(0.7, -0.56, 0.27, 1.6) 1.2s both;
+}
+
+@keyframes ak-hero-rise-40 {
+  from {
+    top: 40px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes ak-hero-rise-30 {
+  from {
+    top: 30px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@keyframes ak-hero-rise-20 {
+  from {
+    top: 20px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title,
+  .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title .hero-main-title-1,
+  .ak-hero.ak-style1 .hero-text-section .slider-info .hero-sub-text,
+  .ak-hero.ak-style1 .hero-text-section .slider-info .hero-btn.style-1 {
+    animation: none;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Hero "Gutschein kaufen" CTA — a distinct gift-voucher call to action,
+   styled to stand apart from the plain reservation button. */
+.hero-gutschein-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 28px 12px 14px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--body-font-family);
+  background: linear-gradient(135deg, #ffe9c2 0%, #ffd28d 45%, #e3b46a 100%);
+  box-shadow: 0 10px 28px rgba(255, 210, 141, 0.35), 0 2px 8px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.hero-gutschein-cta:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 38px rgba(255, 210, 141, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.hero-gutschein-cta:active {
+  transform: translateY(-1px) scale(1.0);
+}
+.hero-gutschein-cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(4, 13, 16, 0.12);
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+.hero-gutschein-cta:hover .hero-gutschein-cta-icon {
+  transform: rotate(-12deg) scale(1.08);
+}
+.hero-gutschein-cta-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  text-align: left;
+}
+.hero-gutschein-cta-title {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #201705;
+}
+.hero-gutschein-cta-sub {
+  font-family: var(--body-font-family);
+  font-size: 12.5px;
+  font-weight: 400;
+  font-style: italic;
+  color: #5a4520;
+  letter-spacing: 0.01em;
+}
+.hero-gutschein-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-gutschein-cta:hover::before {
+  left: 130%;
+}
+@media screen and (max-width: 767px) {
+  .hero-gutschein-cta {
+    padding: 10px 20px 10px 10px;
+    gap: 10px;
+  }
+  .hero-gutschein-cta-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .hero-gutschein-cta-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .hero-gutschein-cta-title {
+    font-size: 14px;
+  }
+  .hero-gutschein-cta-sub {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-gutschein-cta,
+  .hero-gutschein-cta-icon,
+  .hero-gutschein-cta::before {
+    transition: none;
+  }
 }
 
 .ak-hero.ak-style2 {
@@ -4322,10 +4532,10 @@ input[type=checkbox] {
     min-height: calc(100vh + 10px);
   }
   .ak-hero.ak-style1 .hero-text-section {
-    margin-left: 0px;
+    margin-left: 24px;
   }
   .ak-hero.ak-style1 .hero-text-section .slider-info {
-    width: 100%;
+    width: calc(100% - 24px);
   }
   .ak-hero.ak-style1 .hero-text-section .slider-info .hero-title {
     text-align: start;
@@ -4667,6 +4877,7 @@ input[type=checkbox] {
 }
 .opening-hour .opening-hour-text-section .opening-hour-title {
   color: #ffd28d;
+  white-space: nowrap;
 }
 .opening-hour .opening-hour-text-section .opening-hour-date {
   position: relative;
@@ -4761,7 +4972,79 @@ input[type=checkbox] {
   transition: all 0.5s ease;
 }
 .ak-card.ak-style-1 .ak-card-img {
+  position: relative;
+  display: block;
   width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.ak-card.ak-style-1 .ak-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.ak-card.ak-style-1:hover .ak-card-img img {
+  transform: scale(1.08);
+}
+.ak-card.ak-style-1 .ak-card-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(4, 13, 16, 0.15) 0%, rgba(4, 13, 16, 0.55) 65%, rgba(4, 13, 16, 0.85) 100%);
+  pointer-events: none;
+}
+.ak-card.ak-style-1 .ak-card-logo {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.ak-card.ak-style-1 .ak-card-logo::before {
+  content: "";
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(9, 30, 36, 0.9) 0%, rgba(4, 13, 16, 0.6) 70%, transparent 100%);
+  border: 1px solid rgba(255, 210, 141, 0.55);
+  box-shadow: 0 0 0 0 rgba(255, 210, 141, 0.35);
+  transform: scale(0.35) rotate(-25deg);
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ak-card.ak-style-1 .ak-card-logo img {
+  position: relative;
+  width: 76px;
+  height: auto;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.5));
+  transform: scale(0.35) rotate(18deg);
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.06s;
+}
+.ak-card.ak-style-1:hover .ak-card-logo {
+  opacity: 1;
+}
+.ak-card.ak-style-1:hover .ak-card-logo::before {
+  transform: scale(1) rotate(0deg);
+  animation: ak-card-logo-pulse 1.6s ease-out 0.55s infinite;
+}
+.ak-card.ak-style-1:hover .ak-card-logo img {
+  transform: scale(1) rotate(0deg);
+}
+@keyframes ak-card-logo-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 210, 141, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 210, 141, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 210, 141, 0);
+  }
 }
 .ak-card.ak-style-1 .card-info {
   position: absolute;
@@ -4787,6 +5070,17 @@ input[type=checkbox] {
 .ak-card.ak-style-1:hover > .card-info {
   bottom: 0px;
   opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ak-card.ak-style-1 .ak-card-img img,
+  .ak-card.ak-style-1 .ak-card-logo,
+  .ak-card.ak-style-1 .ak-card-logo::before,
+  .ak-card.ak-style-1 .ak-card-logo img {
+    transition: none;
+  }
+  .ak-card.ak-style-1:hover .ak-card-logo::before {
+    animation: none;
+  }
 }
 
 @media screen and (max-width: 772px) {
@@ -4822,11 +5116,19 @@ input[type=checkbox] {
 .ak-menu-list .ak-menu-list-section-1 img {
   opacity: 0;
   pointer-events: none;
-  height: 220%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   z-index: 999;
   border-radius: 50%;
+  border: 3px solid rgba(255, 210, 141, 0.85);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   position: absolute;
   transform: translate(-30%, -50%);
+}
+/* Speisekarte page only: disable the cursor-following dish image preview */
+.set-bg-img-section .ak-menu-list .ak-menu-list-section-1 img {
+  display: none !important;
 }
 
 .food-menu.style-1 .food-menu-section-1 {
@@ -5144,6 +5446,13 @@ input[type=checkbox] {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.ak-booking-system::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -9;
+  background: linear-gradient(90deg, rgba(4, 13, 16, 0.72) 0%, rgba(9, 30, 36, 0.55) 45%, rgba(9, 30, 36, 0.4) 100%);
+}
 
 .booking-system-form.style-2 {
   display: flex;
@@ -5180,6 +5489,36 @@ input[type=checkbox] {
 }
 .booking-system-form.style-2 .ak-btn.style-5 {
   padding: 15px 20px;
+}
+.booking-system-form .reservation-contact-fields input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #4F4836;
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+.booking-system-form .reservation-contact-fields input::placeholder {
+  color: #C8C8C8;
+}
+.booking-system-form .reservation-contact-fields input:focus {
+  outline: none;
+  border-color: #FFD28D;
+}
+.booking-system-form .guests-custom-input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #4F4836;
+  color: #fff;
+  padding: 14px 16px;
+  margin-bottom: 25px;
+}
+.booking-system-form .guests-custom-input::placeholder {
+  color: #C8C8C8;
+}
+.booking-system-form .guests-custom-input:focus {
+  outline: none;
+  border-color: #FFD28D;
 }
 .booking-system-form .select {
   border: 1px solid #4F4836;
@@ -5564,6 +5903,9 @@ input[type=checkbox] {
 .location-card .location-card-item {
   flex-basis: 40%;
   padding: 60px;
+}
+.location-card .location-card-item a {
+  display: block;
 }
 .location-card .location-card-item .card-title {
   margin-top: 17px;
@@ -6683,18 +7025,18 @@ input[type=checkbox] {
 }
 
 .felicita-logo-link {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   text-align: center;
   text-decoration: none;
+  top: 28px;
 }
 
 #felicita-logo-animated {
   display: inline-block;
   font-family: "Parisienne", cursive;
-  font-size: clamp(3.4rem, 6.8vw, 7.2rem);
+  font-size: clamp(3.8rem, 6.6vw, 7.4rem);
   line-height: 1;
   color: #bfa46b;
   letter-spacing: 3.4px;
@@ -6703,12 +7045,11 @@ input[type=checkbox] {
   max-width: 100%;
   white-space: nowrap;
   position: relative;
-  top: 52px;
   left: 0;
   opacity: 0;
   transform: translateY(-40px);
   transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1), transform 1s cubic-bezier(0.77, 0, 0.175, 1);
-  z-index: 9999;
+  z-index: 1;
 }
 
 @media screen and (max-width: 1199px) {
@@ -6718,19 +7059,23 @@ input[type=checkbox] {
   }
 
   #felicita-logo-animated {
-    font-size: clamp(2.2rem, 7.6vw, 4rem);
-    top: 16px;
+    font-size: clamp(3rem, 5.4vw, 4.8rem);
     letter-spacing: 2.2px;
+  }
+
+  .felicita-logo-link {
+    top: 18px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .ak-site_header.ak-style1 .header-top {
     padding: 0 12px;
-    height: 64px;
+    height: 100px;
   }
 
   .ak-site_header.ak-style1 .header-top .wrapper {
+    height: 100px;
     justify-content: center;
     gap: 8px;
   }
@@ -6745,9 +7090,12 @@ input[type=checkbox] {
   }
 
   #felicita-logo-animated {
-    font-size: clamp(1.7rem, 9vw, 2.5rem);
-    top: 8px;
+    font-size: clamp(2.3rem, 9vw, 3.2rem);
     letter-spacing: 1.5px;
+  }
+
+  .felicita-logo-link {
+    top: 12px;
   }
 }
 
@@ -6755,6 +7103,49 @@ input[type=checkbox] {
   #felicita-logo-animated {
     font-size: 1.6rem;
     letter-spacing: 1px;
+  }
+}
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header-reserve-link {
+  position: relative;
+  display: none;
+  height: 100%;
+  align-items: center;
+  color: #fff;
+  opacity: 1;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding-left: 28px;
+}
+.header-reserve-link:hover {
+  color: #FFD28D;
+}
+.header-reserve-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 85%;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 210, 141, 0.25) 35%, #FFD28D 50%, rgba(255, 210, 141, 0.25) 65%, transparent 100%);
+  background-size: 100% 300%;
+  animation: ak-gold-shine-v 4.5s linear infinite;
+}
+
+/* Desktop web view: swap the hamburger for a direct "Reservierung" link,
+   since the fullscreen overlay menu is only needed below the 1200px nav
+   breakpoint where the full nav list is hidden. */
+@media screen and (min-width: 1200px) {
+  .ak-menu-toggle {
+    display: none;
+  }
+  .header-reserve-link {
+    display: inline-flex;
   }
 }
 

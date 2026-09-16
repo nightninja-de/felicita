@@ -24,121 +24,64 @@
             <!-- Start Hero -->
             <section>
                 <div class="ak-hero ak-style1">
-                    <div class="ak-hero-bg ak-bg" data-src="{{ asset('assets/img/hero_bg_1.jpg') }}"></div>
+                    <div class="ak-hero-bg ak-bg" data-src="{{ asset('assets/img/herofelicita.webp') }}"></div>
                     <div class="hero-text-section container-fluid">
-                        <div class="ak-slider ak-slider-1">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="slider-info">
-                                        <div class="hero-title">
-                                            <h1 class="hero-main-title">Elegante Auszeit</h1>
-                                            <h1 class="hero-main-title-1">Restaurant</h1>
-                                        </div>
-
-                                        <div class="ak-height-30 ak-height-lg-30"></div>
-                                        <div>
-                                            <p class="hero-sub-text">Willkommen in unserem Restaurant, wo kulinarische
-                                                Kunstfertigkeit auf außergewöhnliche Genussmomente trifft. Bei uns
-                                                schaffen wir eine gastronomische Oase, die Ihre Sinne verwöhnt und Ihnen
-                                            </p>
-                                        </div>
-                                        <div class="ak-height-70 ak-height-lg-30"></div>
-                                        <a href="{{ route('reservations') }}" class="hero-btn style-1">
-                                            <div class="ak-btn style-5 color-yellow-bg">
-                                                Reservierungen
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-info">
-
-                                        <div class="hero-title">
-                                            <h1 class="hero-main-title">Elegante Auszeit</h1>
-                                            <h1 class="hero-main-title-1">Restaurant</h1>
-                                        </div>
-
-                                        <div class="ak-height-30 ak-height-lg-30"></div>
-                                        <div>
-                                            <p class="hero-sub-text">Willkommen in unserem Restaurant, wo kulinarische
-                                                Kunstfertigkeit auf außergewöhnliche Genussmomente trifft. Bei uns
-                                                schaffen wir eine gastronomische Oase, die Ihre Sinne verwöhnt und Ihnen
-                                            </p>
-                                        </div>
-                                        <div class="ak-height-70 ak-height-lg-30"></div>
-                                        <a href="{{ route('reservations') }}" class="hero-btn style-1">
-                                            <div class="ak-btn style-5 color-yellow-bg">
-                                                Reservierungen
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="slider-info">
-                                        <div class="hero-title">
-                                            <h1 class="hero-main-title">Elegante Auszeit</h1>
-                                            <h1 class="hero-main-title-1">Restaurant</h1>
-                                        </div>
-
-                                        <div class="ak-height-30 ak-height-lg-30"></div>
-                                        <div>
-                                            <p class="hero-sub-text">Willkommen in unserem Restaurant, wo kulinarische
-                                                Kunstfertigkeit auf außergewöhnliche Genussmomente trifft. Bei uns
-                                                schaffen wir eine gastronomische Oase, die Ihre Sinne verwöhnt und Ihnen
-                                            </p>
-                                        </div>
-                                        <div class="ak-height-70 ak-height-lg-30"></div>
-                                        <a href="{{ route('reservations') }}" class="hero-btn style-1">
-                                            <div class="ak-btn style-5 color-yellow-bg">
-                                                Reservierungen
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
+                        <div class="slider-info">
+                            <div class="hero-title">
+                                <h1 class="hero-main-title">Elegante Auszeit</h1>
+                                <h1 class="hero-main-title-1">Restaurant</h1>
                             </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="ak-swiper-controll">
-                            <div class="ak-swiper-navigation-wrap">
-                                <div class="ak-swiper-button-prev">
-                                    <div class="hero-swiper-prev">
-                                        <div class="btn-cricle"></div>
-                                        <div class="btn-arrow">
-                                            <svg width="40" height="55" viewBox="0 0 54 52" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_1166_8458)">
-                                                    <path
-                                                        d="M16.6309 25.4001L25.1406 16.8902C25.4463 16.5333 25.9835 16.4917 26.3405 16.7974C26.6974 17.1031 26.739 17.6403 26.4333 17.9973C26.4048 18.0306 26.3738 18.0617 26.3405 18.0901L19.2859 25.1532H52.9762C53.4461 25.1532 53.8271 25.5343 53.8271 26.0043C53.8271 26.4743 53.4461 26.8552 52.9762 26.8552H19.2859L26.3405 33.9098C26.6974 34.2155 26.739 34.7527 26.4333 35.1097C26.1275 35.4666 25.5904 35.5082 25.2334 35.2025C25.2001 35.174 25.1691 35.1429 25.1406 35.1097L16.6308 26.5999C16.3009 26.2681 16.3009 25.732 16.6309 25.4001Z"
-                                                        fill="#FFD28D" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="ak-swiper-button-next">
-                                    <div class="hero-swiper-next">
-                                        <div class="btn-cricle"></div>
-                                        <div class="btn-arrow">
-                                            <svg width="40" height="55" viewBox="0 0 55 52" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g clip-path="url(#clip0_1166_8452)">
-                                                    <path
-                                                        d="M38.0234 25.4001L29.5137 16.8902C29.208 16.5333 28.6708 16.4917 28.3138 16.7974C27.9569 17.1031 27.9153 17.6403 28.221 17.9973C28.2495 18.0306 28.2805 18.0617 28.3138 18.0901L35.3684 25.1532H1.6781C1.20816 25.1532 0.827148 25.5343 0.827148 26.0043C0.827148 26.4743 1.20816 26.8552 1.6781 26.8552H35.3684L28.3138 33.9098C27.9569 34.2155 27.9153 34.7527 28.221 35.1097C28.5268 35.4666 29.0639 35.5082 29.4209 35.2025C29.4542 35.174 29.4852 35.1429 29.5137 35.1097L38.0235 26.5999C38.3534 26.2681 38.3534 25.732 38.0234 25.4001Z"
-                                                        fill="#FFD28D" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+
+                            <div class="ak-height-30 ak-height-lg-30"></div>
+                            <div>
+                                <p class="hero-sub-text">Mediterrane Lebensfreude, italienische Handwerkskunst –
+                                    Felicità ist Ihre kulinarische Oase mitten in Leipzig.
+                                </p>
                             </div>
+                            <div class="ak-height-70 ak-height-lg-30"></div>
+                            <a href="{{ route('voucher.form') }}" class="hero-btn style-1 hero-gutschein-cta">
+                                <span class="hero-gutschein-cta-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 12V22H4V12" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 7H2V12H22V7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 22V7" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="hero-gutschein-cta-text">
+                                    <span class="hero-gutschein-cta-title">Gutschein kaufen</span>
+                                    <span class="hero-gutschein-cta-sub">Das perfekte Geschenk</span>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
 
             </section>
             <!-- End Hero -->
+
+            <!-- Start Welcome / SEO Intro -->
+            <section>
+                <div class="ak-height-100 ak-height-lg-60"></div>
+                <div class="container">
+                    <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
+                        <div class="ak-section-subtitle">Willkommen bei Felicità</div>
+                        <h2 class="ak-section-title anim-title">Ihr mediterranes Restaurant in Leipzig</h2>
+                    </div>
+                    <div class="ak-height-30 ak-height-lg-20"></div>
+                    <p class="text-center" style="max-width:820px;margin:0 auto;">
+                        Felicità ist Ihr mediterranes Restaurant in Leipzig – ein Ort, an dem authentische
+                        italienische und mediterrane Küche auf herzliche Leipziger Gastfreundschaft trifft.
+                        Von frisch zubereiteter Pasta über gegrillten Fisch bis hin zu saisonalen mediterranen
+                        Klassikern erleben Sie bei uns echten kulinarischen Genuss in stilvollem Ambiente.
+                        Reservieren Sie Ihren Tisch für ein besonderes Essen in Leipzig oder verschenken Sie
+                        einen Felicità-Gutschein für unvergessliche kulinarische Momente.
+                    </p>
+                </div>
+                <div class="ak-height-100 ak-height-lg-60"></div>
+            </section>
+            <!-- End Welcome / SEO Intro -->
 
             <!-- Start Sliding Text -->
             <div class="ak-moving-section-wrap ak-normal text-uppercase">
@@ -155,62 +98,25 @@
             </div>
             <!-- End Sliding Text -->
 
-            <!-- Start About -->
-            <section class="ak-about-bg-color">
-                <div class="ak-height-150 ak-height-lg-60"></div>
-                <div class="ak-about ak-style-1">
-                    <div class="ak-about-bg-img ak-bg">
-                        <img class="imagesZoom" src="{{ asset('assets/img/about_bg.jpg') }}" alt="...">
-                    </div>
-                    <div class="ak-about-hr"></div>
-                    <div class="container">
-                        <div class="about-section ak-about-1">
-                            <div class="about-text-section">
-                                <h2 class="about-title">Exquisites Speiseerlebnis für
-                                    <br><span class="anim-title-2">Könige</span>
-                                </h2>
-                                <div class="ak-height-35 ak-height-lg-30"></div>
-                                <p class="about-subtext">Willkommen in unserem Restaurant, wo kulinarische
-                                    Kunstfertigkeit auf außergewöhnliche Genussmomente trifft. Bei uns schaffen wir
-                                    eine gastronomische Oase, die Ihre Sinne verwöhnt und Ihnen unvergessliche Erinnerungen schenkt.
-                                </p>
-                                <div class="ak-height-30 ak-height-lg-30"></div>
-                                <p class="about-subtext">Bei uns verschmilzt kulinarische Handwerkskunst mit
-                                    außergewöhnlichem Genuss – für Momente, die einfach begeistern.
-                                </p>
-                                <div class="ak-height-50 ak-height-lg-30"></div>
-                                <div class="text-btn">
-                                    <a href="{{ route('about') }}" class="text-btn1">
-                                        Die Küche entdecken
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ak-height-150 ak-height-lg-60"></div>
-            </section>
-            <!-- End About -->
-
             <!-- Start Opening Hour -->
             <section class="ak-bg-secendary">
 
                 <div class="opening-hour">
                     <div class="opening-hour-img-section">
-                        <img src="{{ asset('assets/img/openingHour.jpg') }}" class="opening-bg-img ak-bg" alt="..."
+                        <img src="{{ asset('assets/img/barfelicita.webp') }}" class="opening-bg-img ak-bg" alt="..."
                             data-speed="auto">
                         <div class="overlap-opening-img"></div>
                     </div>
                     <div class="opening-hour-text-section">
-                        <h2 class="opening-hour-title anim-title-2">Öffnungszeiten </h2>
+                        <h2 class="opening-hour-title anim-title-2">Öffnungszeiten</h2>
                         <div class="ak-height-30 ak-height-lg-30"></div>
-                        <p class="opening-hour-subtext">Bei uns verschmilzt kulinarische Handwerkskunst mit
-                            außergewöhnlichem Genuss – für Momente, die einfach begeistern.</p>
+                        <p class="opening-hour-subtext">Mitten im Herzen von Leipzig verschmilzt kulinarische
+                            Handwerkskunst mit außergewöhnlichem Genuss – für Momente, die einfach begeistern.</p>
                         <div class="ak-height-30 ak-height-lg-30"></div>
                         <div class="opening-hour-date">
-                            <p>SONNTAG – DONNERSTAG: 11:30 – 23:00 Uhr</p>
+                            <p>MONTAG – SONNTAG</p>
                             <div class="opening-hour-hr"></div>
-                            <p> FREITAG & SAMSTAG: 11:30 – 00:00 Uhr</p>
+                            <p>11:00 – 22:00 UHR</p>
                         </div>
                         <div class="ak-height-70 ak-height-lg-30"></div>
                         <div class="text-btn">
@@ -240,97 +146,56 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
-                                    <a href="{{ route('portfolioDetails') }}" class="ak-card-img">
-                                        <img src="{{ asset('assets/img/food_item_1.jpg') }}" alt="..." />
-                                    </a>
-                                    <div class="card-info">
-                                        <div class="card-text style-1">
-                                            <a href="{{ route('portfolioDetails') }}">
-                                                <h5 class="card-title">
-                                                    Spaghetti Carbonara
-                                                </h5>
-                                            </a>
-                                            <div class="card-subtitle">
-                                                Desserts
-                                            </div>
-                                        </div>
+                                    <div class="ak-card-img">
+                                        <img src="{{ asset('assets/img/fel11.webp') }}" alt="Felicità" />
+                                        <span class="ak-card-gradient"></span>
+                                        <span class="ak-card-logo">
+                                            <img src="{{ asset('assets/img/felicita glass.png') }}" alt="Felicità">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
-                                    <a href="{{ route('portfolioDetails') }}" class="ak-card-img">
-                                        <img src="{{ asset('assets/img/food_item_2.jpg') }}" alt="..." />
-
-                                    </a>
-                                    <div class="card-info">
-                                        <div class="card-text style-1">
-                                            <a href="{{ route('portfolioDetails') }}">
-                                                <h5 class="card-title">
-                                                    Spaghetti Carbonara
-                                                </h5>
-                                            </a>
-                                            <div class="card-subtitle">
-                                                Desserts
-                                            </div>
-                                        </div>
+                                    <div class="ak-card-img">
+                                        <img src="{{ asset('assets/img/fel12.webp') }}" alt="Felicità" />
+                                        <span class="ak-card-gradient"></span>
+                                        <span class="ak-card-logo">
+                                            <img src="{{ asset('assets/img/felicita glass.png') }}" alt="Felicità">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
-                                    <a href="{{ route('portfolioDetails') }}" class="ak-card-img">
-                                        <img src="{{ asset('assets/img/food_item_3.jpg') }}" alt="..." />
-                                    </a>
-                                    <div class="card-info">
-                                        <div class="card-text style-1">
-                                            <a href="{{ route('portfolioDetails') }}">
-                                                <h5 class="card-title">
-                                                    Spaghetti Carbonara
-                                                </h5>
-                                            </a>
-                                            <div class="card-subtitle">
-                                                Desserts
-                                            </div>
-                                        </div>
+                                    <div class="ak-card-img">
+                                        <img src="{{ asset('assets/img/fel13.webp') }}" alt="Felicità" />
+                                        <span class="ak-card-gradient"></span>
+                                        <span class="ak-card-logo">
+                                            <img src="{{ asset('assets/img/felicita glass.png') }}" alt="Felicità">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
-                                    <a href="{{ route('portfolioDetails') }}" class="ak-card-img">
-                                        <img src="{{ asset('assets/img/food_item_5.jpg') }}" alt="..." />
-                                    </a>
-                                    <div class="card-info">
-                                        <div class="card-text style-1">
-                                            <a href="{{ route('portfolioDetails') }}">
-                                                <h5 class="card-title">
-                                                    Spaghetti Carbonara
-                                                </h5>
-                                            </a>
-                                            <div class="card-subtitle">
-                                                Desserts
-                                            </div>
-                                        </div>
+                                    <div class="ak-card-img">
+                                        <img src="{{ asset('assets/img/fel14.webp') }}" alt="Felicità" />
+                                        <span class="ak-card-gradient"></span>
+                                        <span class="ak-card-logo">
+                                            <img src="{{ asset('assets/img/felicita glass.png') }}" alt="Felicità">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="ak-card ak-style-1">
-                                    <a href="{{ route('portfolioDetails') }}" class="ak-card-img">
-                                        <img src="{{ asset('assets/img/food_item_4.jpg') }}" alt="..." />
-                                    </a>
-                                    <div class="card-info">
-                                        <div class="card-text style-1">
-                                            <a href="{{ route('portfolioDetails') }}">
-                                                <h5 class="card-title">
-                                                    Spaghetti Carbonara
-                                                </h5>
-                                            </a>
-                                            <div class="card-subtitle">
-                                                Desserts
-                                            </div>
-                                        </div>
+                                    <div class="ak-card-img">
+                                        <img src="{{ asset('assets/img/fel15.webp') }}" alt="Felicità" />
+                                        <span class="ak-card-gradient"></span>
+                                        <span class="ak-card-logo">
+                                            <img src="{{ asset('assets/img/felicita glass.png') }}" alt="Felicità">
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -390,251 +255,221 @@
                     <div class="ak-height-65 ak-height-lg-30"></div>
                     <div class="ak-menu-list">
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld1.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Vitello Tonnato</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>12,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Hauchdünn geschnittenes Kalbfleisch mit cremiger Thunfischsauce und Kapern</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show_2.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld6.webp') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Gamberetti in Aglio</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>12,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Saftige Garnelen in aromatischem Weißwein-Zitrus-Sud mit Knoblauch</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld2.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Spaghetti Carbonara</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>10,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Nach traditioneller Rezeptur mit Guanciale, Eigelb und Pecorino</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show_2.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld7.webp') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Spaghetti Felicità</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>15,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Cremige Cherrytomatensoße, Knoblauch und Riesengarnelen mit Rucola</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld3.webp') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Tagliatelle Tartufate</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>16,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Feine Sahnesauce mit Parmesan und aromatischem Trüffelcarpaccio</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show_2.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld8.JPG') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Rumpsteak</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>25,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Gegrillt mit Kräuterbutter, dazu Butter-Tagliatelle und Sauce nach Wahl</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld4.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Salmone alla Griglia</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>23,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Lachs vom Grill serviert mit mediterranem Grillgemüse</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show_2.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld9.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Pizza Quattro Formaggi</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>12,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Vier ausgewählte Käsesorten auf hausgemachter Tomatensauce</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld5.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Tiramisù</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>6,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Löffelbiskuits, Mascarpone, Espresso, Amaretto und Kakao</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="ak-menu-list-section-1">
-                            <img src="{{ asset('assets/img/item-show_2.png') }}" alt="...">
+                            <img src="{{ asset('assets/img/felld10.jpg') }}" alt="...">
                             <div class="food-menu style-1">
                                 <div class="food-menu-section-1">
                                     <div class="food-menu-title">
-                                        <p>Spaghetti alla Carbonara</p>
+                                        <p>Aperol Spritz</p>
                                     </div>
                                     <div class="food-menu-hr">
                                         <div class="food-menu-hr style-1"></div>
                                         <div class="food-menu-hr style-1"></div>
                                     </div>
                                     <div class="food-menu-price">
-                                        <p>49 €</p>
+                                        <p>7,90 €</p>
                                     </div>
                                 </div>
                                 <div class="food-menu-section-2">
                                     <div class="food-menu-subsitle">
-                                        <p>Meisterhaft von unseren Küchenchefs zubereitet</p>
-                                    </div>
-                                    <div class="food-menu-price-subsitle">
-                                        <p>Inklusive einem Glas Saft</p>
+                                        <p>Aperol, Prosecco, Soda und eine Orangenscheibe</p>
                                     </div>
                                 </div>
                             </div>
@@ -668,14 +503,14 @@
                             </div>
                             <div class="ak-height-30 ak-height-lg-30"></div>
                             <div>
-                                <p>Willkommen in unserem Restaurant, wo kulinarische Kunstfertigkeit auf
-                                    außergewöhnliche Genussmomente trifft. Bei uns schaffen wir eine gastronomische
-                                    Oase, die Ihre Sinne verwöhnt.
+                                <p>Felicità ist Ihr mediterranes Restaurant mitten in Leipzig, wo italienische
+                                    Handwerkskunst auf mediterrane Lebensfreude trifft. Bei uns schaffen wir eine
+                                    kulinarische Oase, die Ihre Sinne verwöhnt.
                                 </p>
                             </div>
                             <div class="ak-height-50 ak-height-lg-30"></div>
                             <div class="img-one">
-                                <img src="{{ asset('assets/img/bestItem2.jpg') }}" alt="..." data-speed="1.2" data-lag="0">
+                                <img src="{{ asset('assets/img/fel1.webp') }}" alt="..." data-speed="1.2" data-lag="0">
                                 <div class="img-overlay"></div>
                             </div>
                         </div>
@@ -684,7 +519,7 @@
                         </div>
                         <div class="best-item-section-3">
                             <div class="img-two">
-                                <img src="{{ asset('assets/img/bestItem1.jpg') }}" alt="..." data-speed="1.1" data-lag="0">
+                                <img src="{{ asset('assets/img/fel2.webp') }}" alt="..." data-speed="1.1" data-lag="0">
                                 <div class="img-overlay"></div>
                             </div>
                         </div>
@@ -708,12 +543,12 @@
                                         <div class="testimonial-info">
                                             <img src="{{ asset('assets/img/testimonial_1.jpg') }}" class="testimonial-info-img"
                                                 alt="...">
-                                            <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                            <p class="short-title">Aus den USA</p>
-                                            <p class="testimonial-info-subtitle">„Das talentierte Team leidenschaftlicher
-                                                Küchenchefs kreiert jedes Gericht mit größter Sorgfalt und vereint
-                                                erlesene Zutaten mit innovativen Techniken zu kulinarischen Kreationen,
-                                                die ebenso beeindruckend aussehen, wie sie schmecken.“</p>
+                                            <h6 class="testimonial-info-title">Mareike Schulz</h6>
+                                            <p class="short-title">Aus Leipzig-Connewitz</p>
+                                            <p class="testimonial-info-subtitle">„Seit unserem ersten Besuch bei Felicità
+                                                sind wir restlos begeistert – die Tagliatelle Tartufate waren
+                                                unvergesslich, und das Ambiente lässt einen für einen Abend wirklich
+                                                das Mittelmeer spüren.“</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-icon-1">
@@ -732,12 +567,12 @@
                                         <div class="testimonial-info">
                                             <img src="{{ asset('assets/img/testimonial_2.jpg') }}" class="testimonial-info-img"
                                                 alt="...">
-                                            <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                            <p class="short-title">Aus den USA</p>
-                                            <p class="testimonial-info-subtitle">„Das talentierte Team leidenschaftlicher
-                                                Küchenchefs kreiert jedes Gericht mit größter Sorgfalt und vereint
-                                                erlesene Zutaten mit innovativen Techniken zu kulinarischen Kreationen,
-                                                die ebenso beeindruckend aussehen, wie sie schmecken.“</p>
+                                            <h6 class="testimonial-info-title">Jonas Bergmann</h6>
+                                            <p class="short-title">Aus Leipzig-Plagwitz</p>
+                                            <p class="testimonial-info-subtitle">„Endlich ein Restaurant in Leipzig, das
+                                                mediterrane Küche so ehrlich und mit so viel Liebe zum Detail umsetzt.
+                                                Der Service ist herzlich, die Weinkarte top – wir kommen garantiert
+                                                wieder.“</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-icon-1">
@@ -756,12 +591,11 @@
                                         <div class="testimonial-info">
                                             <img src="{{ asset('assets/img/testimonial_3.jpg') }}" class="testimonial-info-img"
                                                 alt="...">
-                                            <h6 class="testimonial-info-title">Steven K. Roberts</h6>
-                                            <p class="short-title">Aus den USA</p>
-                                            <p class="testimonial-info-subtitle">„Das talentierte Team leidenschaftlicher
-                                                Küchenchefs kreiert jedes Gericht mit größter Sorgfalt und vereint
-                                                erlesene Zutaten mit innovativen Techniken zu kulinarischen Kreationen,
-                                                die ebenso beeindruckend aussehen, wie sie schmecken.“</p>
+                                            <h6 class="testimonial-info-title">Franziska Hoffmann</h6>
+                                            <p class="short-title">Aus Leipzig-Gohlis</p>
+                                            <p class="testimonial-info-subtitle">„Wir haben einen Felicità-Gutschein zum
+                                                Geburtstag geschenkt bekommen und waren hin und weg. Vom Vitello Tonnato
+                                                bis zum Tiramisù – jeder Gang ein kleines Kunstwerk.“</p>
                                         </div>
                                     </div>
                                     <div class="testimonial-icon-1">
@@ -816,21 +650,13 @@
             <!-- Start Booking System -->
             <section>
                 <div class="ak-booking-system">
-                    <img class="ak-booking-system-bg-img ak-bg imagesZoom" src="{{ asset('assets/img/bookingSystemBg.png') }}"
+                    <img class="ak-booking-system-bg-img ak-bg imagesZoom" src="{{ asset('assets/img/fel3.webp') }}"
                         alt="...">
                     <div class="ak-height-150 ak-height-lg-60"></div>
                     <div class="container">
                         <div class="row justify-content-center align-content-center align-items-center">
                             <div class="col-md-6 col-12">
                                 <div class="ak-height-lg-60"></div>
-                                <div class="text-center">
-                                    <a href="https://www.youtube.com/watch?v=UsD1MhKBmD4"
-                                        class="ak-video-block ak-style1 ak-video-open">
-                                        <span class="ak-player-btn ak-accent-color">
-                                            <span></span>
-                                        </span>
-                                    </a>
-                                </div>
                                 <div class="ak-height-lg-60"></div>
                             </div>
                             <div class="col-md-6 col-12">

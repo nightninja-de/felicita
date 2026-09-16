@@ -12,7 +12,7 @@
     <div class="ak-height-150 ak-height-lg-60"></div>
     <div class="ak-about ak-style-1">
         <div class="ak-about-bg-img ak-bg">
-            <img class="imagesZoom" src="{{ asset('assets/img/about_bg.jpg') }}" alt="...">
+            <img class="imagesZoom" src="{{ asset('assets/img/fel2.webp') }}" alt="...">
         </div>
         <div class="ak-about-hr"></div>
         <div class="container">
@@ -163,7 +163,7 @@
     <div class="ak-height-150 ak-height-lg-60"></div>
     <div class="opening-hour type-2">
         <div class="opening-hour-img-section style-2">
-            <img src="{{ asset('assets/img/about_open_hour.jpg') }}" class="imagesZoom opening-bg-img ak-bg" alt="...">
+            <img src="{{ asset('assets/img/u2fel.webp') }}" class="imagesZoom opening-bg-img ak-bg" alt="...">
             <div class="overlap-opening-img"></div>
         </div>
         <div class="opening-hour-text-section type-2">
@@ -188,19 +188,5 @@
     </div>
 </section>
 <!-- End  Opening Hour  -->
-
-<div class="ak-height-150 ak-height-lg-60"></div>
-<!-- Start Video -->
-<div class="video-section">
-    <img src="{{ asset('assets/img/aboutVideoBg.jpg') }}" alt="..." class="video-section-bg-img ak-bg imagesZoom" data-speed="1.1">
-    <div class="video-section-btn">
-        <a href="https://www.youtube.com/watch?v=UsD1MhKBmD4" class="ak-video-block ak-style1 ak-video-open">
-            <span class="ak-player-btn ak-accent-color">
-                <span></span>
-            </span>
-        </a>
-    </div>
-</div>
-<!-- End Video -->
 
 @endsection

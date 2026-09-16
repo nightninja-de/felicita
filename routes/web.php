@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\StaffAuthController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ContactController;
 
 // Gutschein purchase
 Route::get('/voucher', [VoucherController::class, 'form'])->name('voucher.form');
@@ -12,10 +14,26 @@ Route::post('/voucher/checkout', [VoucherController::class, 'checkout'])->name('
 Route::get('/voucher/success', [VoucherController::class, 'success'])->name('voucher.success');
 Route::post('/stripe/webhook', [VoucherController::class, 'stripeWebhook'])->name('stripe.webhook');
 
+// Reservations
+Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
+
+// Contact
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
 // Staff auth
 Route::get('/staff/login', [StaffAuthController::class, 'showLogin'])->name('staff.login');
 Route::post('/staff/login', [StaffAuthController::class, 'login']);
 Route::post('/staff/logout', [StaffAuthController::class, 'logout'])->name('staff.logout');
+
+// Local-only dev shortcut: logs in as the seeded staff user, no credentials needed.
+if (app()->environment('local')) {
+    Route::get('/staff/dev-login', function () {
+        $staff = \App\Models\User::first();
+        auth()->login($staff);
+
+        return redirect()->route('staff.scan');
+    })->name('staff.dev-login');
+}
 
 // Staff Gutschein redemption
 Route::middleware('auth')->prefix('staff')->group(function () {
@@ -46,7 +64,6 @@ Route::prefix('home')->group(function () {
         Route::get('/meetTheChef','meetTheChef')->name('meetTheChef');
         Route::get('/menu','menu')->name('menu');
         Route::get('/portfolio','portfolio')->name('portfolio');
-        Route::get('/portfolioDetails','portfolioDetails')->name('portfolioDetails');
         Route::get('/reservations','reservations')->name('reservations');
         Route::get('/events','events')->name('events');
     });

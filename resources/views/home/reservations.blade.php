@@ -15,7 +15,7 @@
             <div class="booking-system-map">
                 <div class="booking-system-map-frist">
                     <div class="ak-google-map ak-bg">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96652.27317354927!2d-74.33557928194516!3d40.79756494697628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c3a82f1352d0dd%3A0x81d4f72c4435aab5!2sTroy+Meadows+Wetlands!5e0!3m2!1sen!2sbd!4v1563075599994!5m2!1sen!2sbd" allowfullscreen=""></iframe>
+                        <iframe src="https://www.google.com/maps?q=Felicit%C3%A0+mediterran+Restaurant%2C+Anton-Zickmantel-Str.+44%2C+04249+Leipzig&output=embed" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
                 <div class="booking-system-map-second">
@@ -29,16 +29,50 @@
                         </div>
                         <div class="ak-height-60 ak-height-lg-30"></div>
                         <div class="booking-system-form">
-                            <button id="voucherBtn" type="button" class="hero-btn style-1" style="margin-bottom:20px;">
-                                <div class="ak-btn style-5 color-yellow-bg">Gutschein sichern</div>
+                            <button id="voucherBtn" type="button" class="hero-btn style-1 hero-gutschein-cta" style="margin-bottom:20px;">
+                                <span class="hero-gutschein-cta-icon">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20 12V22H4V12" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 7H2V12H22V7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 22V7" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z" stroke="#040D10" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="hero-gutschein-cta-text">
+                                    <span class="hero-gutschein-cta-title">Gutschein sichern</span>
+                                    <span class="hero-gutschein-cta-sub">Das perfekte Geschenk</span>
+                                </span>
                             </button>
                             @include('components.voucher_modal')
-                            <form>
+
+                            @if (session('reservation_success'))
+                                <p style="color:#FFD28D; margin-bottom:20px;">Vielen Dank! Ihre Reservierungsanfrage wurde übermittelt. Wir melden uns in Kürze bei Ihnen.</p>
+                            @endif
+
+                            <form method="POST" action="{{ route('reservations.store') }}">
+                                @csrf
+                                <div class="reservation-contact-fields">
+                                    <input type="text" name="name" placeholder="Ihr Name" value="{{ old('name') }}" required>
+                                    @error('name') <p style="color:#e57373; font-size:14px;">{{ $message }}</p> @enderror
+
+                                    <input type="email" name="email" placeholder="Ihre E-Mail" value="{{ old('email') }}" required>
+                                    @error('email') <p style="color:#e57373; font-size:14px;">{{ $message }}</p> @enderror
+
+                                    <input type="tel" name="phone" placeholder="Ihre Telefonnummer" value="{{ old('phone') }}" required>
+                                    @error('phone') <p style="color:#e57373; font-size:14px;">{{ $message }}</p> @enderror
+                                </div>
+                                <div class="ak-height-20 ak-height-lg-20"></div>
                                 <div class="select">
-                                    <select class="ak-form-select">
+                                    <select class="ak-form-select" name="guests" id="guestsSelect">
                                         <option selected value="1">1 Gast</option>
                                         <option value="2">2 Gäste</option>
                                         <option value="3">3 Gäste</option>
+                                        <option value="4">4 Gäste</option>
+                                        <option value="5">5 Gäste</option>
+                                        <option value="6">6 Gäste</option>
+                                        <option value="7">7 Gäste</option>
+                                        <option value="other">Andere Anzahl</option>
                                     </select>
                                     <div class="select-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10" fill="none">
@@ -46,9 +80,34 @@
                                         </svg>
                                     </div>
                                 </div>
+                                <input type="number" id="guestsCustomInput" min="8" max="50" placeholder="Anzahl der Gäste eingeben" class="guests-custom-input" style="display:none;">
+                                <script>
+                                    document.addEventListener('DOMContentLoaded', function () {
+                                        var select = document.getElementById('guestsSelect');
+                                        var custom = document.getElementById('guestsCustomInput');
+                                        if (!select || !custom) return;
+
+                                        function toggleCustomGuests() {
+                                            if (select.value === 'other') {
+                                                custom.style.display = 'block';
+                                                custom.required = true;
+                                                select.removeAttribute('name');
+                                                custom.name = 'guests';
+                                            } else {
+                                                custom.style.display = 'none';
+                                                custom.required = false;
+                                                custom.removeAttribute('name');
+                                                select.name = 'guests';
+                                            }
+                                        }
+
+                                        select.addEventListener('change', toggleCustomGuests);
+                                        toggleCustomGuests();
+                                    });
+                                </script>
                                 <div class="ak-form-time-date">
                                     <div class="ak-time">
-                                        <input value="03:45" class="time-input" type="time" name="time" id="time">
+                                        <input value="{{ old('time', '19:00') }}" min="11:00" max="22:00" class="time-input" type="time" name="time" id="time">
                                         <div class="time-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                                 <g clip-path="url(#clip0_1166_8212)">
@@ -66,7 +125,7 @@
                                         </div>
                                     </div>
                                     <div class="ak-date">
-                                        <input class="date-input" value="2023-07-22" type="date" name="date" id="date">
+                                        <input class="date-input" value="{{ old('date', now()->format('Y-m-d')) }}" min="{{ now()->format('Y-m-d') }}" type="date" name="date" id="date">
                                         <div class="date-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
                                                 <mask id="mask0_1166_8220" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="25" height="25">
@@ -80,6 +139,8 @@
                                     </div>
 
                                 </div>
+                                @error('date') <p style="color:#e57373; font-size:14px;">{{ $message }}</p> @enderror
+                                @error('time') <p style="color:#e57373; font-size:14px;">{{ $message }}</p> @enderror
                                 <div class="ak-height-110 ak-height-lg-90"></div>
                                 <div class="ak-btn style-5">
                                     <button type="submit">Jetzt reservieren
@@ -101,58 +162,58 @@
     <div class="container">
         <div class="ak-section-heading ak-style-1 ak-type-1">
             <div class="ak-section-subtitle">
-                Besuchen Sie uns
+                Sehenswertes in der Nähe
             </div>
-            <h2 class="ak-section-title anim-title">Finden Sie uns in Ihrer Nähe</h2>
+            <h2 class="ak-section-title anim-title">Sehenswürdigkeiten in Leipzig entdecken</h2>
         </div>
     </div>
     <div class="ak-height-65 ak-height-lg-30"></div>
     <div class="container">
         <div class="location-card location-card-style-1">
             <div class="location-card-item style-1">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=V%C3%B6lkerschlachtdenkmal+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Völkerschlachtdenkmal
+                    </h6>
+                    <p class="card-subtext">Historisches Nationaldenkmal</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    New York
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
             <div class="location-card-item style-1">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=Thomaskirche+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Thomaskirche
+                    </h6>
+                    <p class="card-subtext">Bachs Wirkungsstätte</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    Los Angeles
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
             <div class="location-card-item">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=Nikolaikirche+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Nikolaikirche
+                    </h6>
+                    <p class="card-subtext">Ausgangspunkt der Friedlichen Revolution</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    Chicago
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
         </div>
     </div>
@@ -160,49 +221,49 @@
     <div class="container">
         <div class="location-card location-card-style-1">
             <div class="location-card-item style-1">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=Neues+Rathaus+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Neues Rathaus
+                    </h6>
+                    <p class="card-subtext">Leipzigs historisches Rathaus</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    Houston
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
             <div class="location-card-item style-1">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=Augustusplatz+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Augustusplatz
+                    </h6>
+                    <p class="card-subtext">Gewandhaus &amp; Oper Leipzig</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    Phoenix
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
             <div class="location-card-item">
-                <a href="#">
+                <a href="https://www.google.com/maps/search/?api=1&query=Zoo+Leipzig" target="_blank" rel="noopener">
                     <div class="card-icon">
                         <svg viewBox="0 0 40 41" height="41" width="40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 11.127C16.1403 11.127 13 14.1177 13 17.7936C13 18.8971 13.2897 19.9913 13.8404 20.9618L19.6172 28.9121C19.6941 29.0448 19.8407 29.127 20 29.127C20.1593 29.127 20.3059 29.0448 20.3828 28.9121L26.1617 20.9585C26.7103 19.9913 27 18.8971 27 17.7936C27 14.1177 23.8597 11.127 20 11.127ZM20 21.127C18.0701 21.127 16.5 19.6316 16.5 17.7936C16.5 15.9557 18.0701 14.4603 20 14.4603C21.9299 14.4603 23.5 15.9557 23.5 17.7936C23.5 19.6316 21.9299 21.127 20 21.127Z" fill="white" />
                         </svg>
                     </div>
+                    <h6 class="card-title">
+                        Zoo Leipzig
+                    </h6>
+                    <p class="card-subtext">Einer der artenreichsten Zoos Europas</p>
+                    <p>Leipzig</p>
+                    <p>Route &amp; Kontakt anzeigen →</p>
                 </a>
-                <h6 class="card-title">
-                    San Diego
-                </h6>
-                <p class="card-subtext">901 N Pitt Str., Suite 170</p>
-                <p> Alexandria, NY, USA</p>
-                <p> info@example.com </p>
             </div>
         </div>
     </div>

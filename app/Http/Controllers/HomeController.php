@@ -82,11 +82,6 @@ class HomeController extends Controller
         return view('home/portfolio');
     }
 
-    public function portfolioDetails()
-    {
-        return view('home/portfolioDetails');
-    }
-
     public function reservations()
     {
         return view('home/reservations');

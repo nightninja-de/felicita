@@ -13,7 +13,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/food_item_1.jpg') }}" alt="..." />
 
@@ -28,10 +28,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_2.jpg') }}" alt="..." />
                 </div>
@@ -45,10 +45,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_3.jpg') }}" alt="..." />
                 </div>
@@ -62,10 +62,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_4.jpg') }}" alt="..." />
                 </div>
@@ -79,10 +79,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_5.jpg') }}" alt="..." />
                 </div>
@@ -96,10 +96,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_6.jpg') }}" alt="..." />
                 </div>
@@ -113,10 +113,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_7.jpg') }}" alt="..." />
                 </div>
@@ -130,10 +130,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_8.jpg') }}" alt="..." />
                 </div>
@@ -147,10 +147,10 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
         <div class="col">
-            <a href="{{ route('portfolioDetails') }}" class="ak-card ak-style-1">
+            <div class="ak-card ak-style-1">
                 <div class="ak-card-img">
                     <img src="{{ asset('assets/img/portfolio_9.jpg') }}" alt="..." />
                 </div>
@@ -164,7 +164,7 @@
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>
