@@ -11,6 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        // Render (and most PaaS hosts) sit behind a reverse proxy that
+        // terminates HTTPS and forwards to the container over HTTP. Without
+        // trusting it, Symfony rejects the request as a suspicious/untrusted
+        // host, which surfaces as a 400 error on every page.
+        $middleware->trustProxies(at: '*');
+
         $middleware->validateCsrfTokens(except: [
             'stripe/webhook',
         ]);

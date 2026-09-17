@@ -27,6 +27,8 @@ services:
         fromDatabase:
           name: felicita-db
           property: connectionString
+      - key: LOG_CHANNEL
+        value: stderr
       - key: SESSION_DRIVER
         value: database
       - key: CACHE_STORE
