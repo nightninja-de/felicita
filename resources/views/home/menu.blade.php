@@ -1,8 +1,9 @@
 @extends('layout.layout')
 
 @php
-    $title='Unsere Speisekarte';
+    $title='Speisekarte';
     $subTitle = 'Unsere Speisekarte';
+    $metaDescription = 'Entdecken Sie die Speisekarte von Felicità in Leipzig: Vorspeisen, Hauptspeisen, Desserts und Getränke – authentische mediterrane und italienische Küche.';
 @endphp
 
 @section('content')

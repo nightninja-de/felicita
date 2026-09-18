@@ -2,7 +2,7 @@
 <html class="no-js" lang="de">
 
     <!-- Start head Section -->
-    <x-head />
+    <x-head :title="$title ?? null" :metaDescription="$metaDescription ?? null" />
     <!-- End head Section -->
 
 <body>

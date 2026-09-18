@@ -3,6 +3,7 @@
 @php
     $title='Küchenchefs';
     $subTitle = 'Unsere Küchenchefs';
+    $metaDescription = 'Lernen Sie das Küchenteam von Felicità in Leipzig kennen – Leidenschaft für authentische mediterrane und italienische Küche.';
 @endphp
 
 @section('content')

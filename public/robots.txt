@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /staff/
+Disallow: /voucher/success
+Disallow: /voucher/checkout
+
+Sitemap: https://felicitarestaurant.de/sitemap.xml

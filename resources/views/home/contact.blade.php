@@ -3,6 +3,7 @@
 @php
     $title='Kontakt';
     $subTitle = 'Kontakt';
+    $metaDescription = 'Kontaktieren Sie Felicità in Leipzig – Ihr mediterranes Restaurant. Adresse, Telefonnummer und Kontaktformular für Fragen und Anfragen.';
 @endphp
 
 @section('content')

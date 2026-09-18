@@ -3,6 +3,7 @@
 @php
     $title = 'Über uns';
     $subTitle = 'Über uns';
+    $metaDescription = 'Lernen Sie Felicità kennen – Ihr mediterranes Restaurant in Leipzig. Authentische italienische Küche, frische Zutaten und echte Gastfreundschaft.';
 @endphp
 
 @section('content')

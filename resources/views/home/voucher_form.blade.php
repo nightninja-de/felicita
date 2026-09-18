@@ -1,5 +1,11 @@
 @extends('layout.layout')
 
+@php
+    $title = 'Gutschein kaufen';
+    $subTitle = 'Gutschein';
+    $metaDescription = 'Verschenken Sie einen Felicità-Gutschein – das perfekte Geschenk für Liebhaber mediterraner Küche in Leipzig. Jetzt online kaufen.';
+@endphp
+
 @section('content')
 <div class="container" style="max-width: 500px; margin: 40px auto;">
     <h2>Gutschein / Voucher Reservierung</h2>

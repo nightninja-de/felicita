@@ -1,8 +1,9 @@
 @extends('layout.layout')
 
 @php
-    $Title = 'Reservierung';
+    $title = 'Tisch reservieren';
     $subTitle = 'Reservierung';
+    $metaDescription = 'Reservieren Sie jetzt Ihren Tisch bei Felicità, Ihrem mediterranen Restaurant in Leipzig. Schnell, einfach und unverbindlich online buchen.';
 @endphp
 
 @section('content')
