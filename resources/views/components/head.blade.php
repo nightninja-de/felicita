@@ -9,8 +9,10 @@
     @endphp
     <meta name="author" content="Felicità Leipzig" />
     <meta name="description" content="{{ $pageDescription }}" />
-    <meta name="keywords" content="Felicità Leipzig, Felicita Leipzig, Felicita mediterranes Restaurant, mediterranean restaurant Leipzig, mediterranes Restaurant Leipzig, italienisches Restaurant Leipzig, Restaurant Leipzig Reservierung, mediterrane Küche Leipzig, Gutschein Restaurant Leipzig" />
+    <meta name="keywords" content="Felicità Leipzig, Felicita Leipzig, Felicita in Leipzig, Felicita mediterranes Restaurant, Felicita mediterranean restaurant, mediterranean restaurant Leipzig, mediterranes Restaurant Leipzig, italienisches Restaurant Leipzig, Restaurant Leipzig Reservierung, mediterrane Küche Leipzig, Gutschein Restaurant Leipzig" />
     <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="DE-SN" />
+    <meta name="geo.placename" content="Leipzig" />
     <link rel="canonical" href="{{ url()->current() }}" />
     <!-- Open Graph / Social -->
     <meta property="og:type" content="restaurant" />

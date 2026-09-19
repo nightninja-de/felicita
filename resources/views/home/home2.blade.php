@@ -67,7 +67,7 @@
                 <div class="container">
                     <div class="ak-section-heading ak-style-1 ak-type-1 text-center">
                         <div class="ak-section-subtitle">Willkommen bei Felicità</div>
-                        <h2 class="ak-section-title anim-title">Ihr mediterranes Restaurant in Leipzig</h2>
+                        <h2 class="ak-section-title anim-title">Felicità Leipzig – Ihr mediterranes Restaurant</h2>
                     </div>
                     <div class="ak-height-30 ak-height-lg-20"></div>
                     <p class="text-center" style="max-width:820px;margin:0 auto;">
