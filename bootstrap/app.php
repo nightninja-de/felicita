@@ -17,12 +17,6 @@ return Application::configure(basePath: dirname(__DIR__))
         // host, which surfaces as a 400 error on every page.
         $middleware->trustProxies(at: '*');
 
-        // Both felicitarestaurant.de and felicita-restaurant.com point at
-        // this same app. Serving identical content on two domains splits
-        // SEO ranking signal between them, so redirect everything to the
-        // one domain we actually want indexed.
-        $middleware->prepend(\App\Http\Middleware\RedirectToPrimaryDomain::class);
-
         $middleware->validateCsrfTokens(except: [
             'stripe/webhook',
         ]);

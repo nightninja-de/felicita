@@ -7,6 +7,13 @@ use App\Http\Controllers\VoucherController;
 use App\Http\Controllers\StaffAuthController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SeoController;
+
+// SEO: robots.txt and sitemap.xml self-reference whichever domain served
+// the request, since both felicitarestaurant.de and felicita-restaurant.com
+// serve this app independently.
+Route::get('/robots.txt', [SeoController::class, 'robots']);
+Route::get('/sitemap.xml', [SeoController::class, 'sitemap']);
 
 // Gutschein purchase
 Route::get('/voucher', [VoucherController::class, 'form'])->name('voucher.form');
