@@ -13,6 +13,8 @@
     <meta name="robots" content="index, follow" />
     <meta name="geo.region" content="DE-SN" />
     <meta name="geo.placename" content="Leipzig" />
+    <meta name="geo.position" content="51.303079563971835;12.321616454909384" />
+    <meta name="ICBM" content="51.303079563971835, 12.321616454909384" />
     <link rel="canonical" href="{{ url()->current() }}" />
     <!-- Open Graph / Social -->
     <meta property="og:type" content="restaurant" />
@@ -49,6 +51,12 @@
             "addressLocality": "Leipzig",
             "addressCountry": "DE"
         },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 51.303079563971835,
+            "longitude": 12.321616454909384
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=51.303079563971835,12.321616454909384",
         "telephone": "+49 341 24806093",
         "email": "support@felicita-restaurant.com",
         "priceRange": "€€",
